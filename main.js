@@ -13,7 +13,6 @@ form.onsubmit = event => {
 
     //lägger till texten man skrev in som text till textrutan
     let newToDo = document.createElement("label");
-    // newToDo.textContent = toDoInput.value;
     div.appendChild(newToDo);
 
     //lägger till checkbox rutan och sparar info om att den finns
@@ -37,7 +36,7 @@ form.onsubmit = event => {
     document.getElementById('footer').style.display = 'block';
 
     countItems ++;
-    
+
     button.onclick= event => {
         // event.preventDefault();    
         li.removeChild(div);
