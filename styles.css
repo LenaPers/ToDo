@@ -95,3 +95,8 @@ button {
     margin-right: 5px;
 
 }
+
+#create-new-todo button{
+height: 15px;
+
+}

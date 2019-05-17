@@ -1,15 +1,19 @@
 // Jakobs kod
 
 const form = document.querySelector("form");
+let counter = document.createElement("p");
+let footer = document.getElementById('footer');
+footer.appendChild(counter);
 
 form.onsubmit = event => {
     event.preventDefault();
     //sparar ner både input och listan att placera input i
     let toDoInput = document.getElementById("toDoInput");
-    let li = document.getElementById('create-new-todo');
+    let toDoContainter = document.getElementById('create-new-todo');
 
     let div = document.createElement("div");
-    li.appendChild(div);
+    div.setAttribute("class", "active");
+    toDoContainter.appendChild(div);
 
     //lägger till texten man skrev in som text till textrutan
     let newToDo = document.createElement("label");
@@ -35,18 +39,31 @@ form.onsubmit = event => {
     document.getElementById('create-new-todo').style.display = 'block';
     document.getElementById('footer').style.display = 'block';
 
-    countItems ++;
 
-    button.onclick= event => {
+
+    button.onclick = event => {
         // event.preventDefault();    
-        li.removeChild(div);
-        countItems --;
-     
-    }
+        toDoContainter.removeChild(div);
+        
+        let itemsleft = toDoContainter.children.length;
+        counter.textContent = itemsleft + " items left";
+
+        if(itemsleft === 0)
+        {
+            document.getElementById('footer').style.display = 'none';
+            document.getElementById('create-new-todo').style.display = 'none';
+        }
+    }    
+    
+    let itemsleft = toDoContainter.children.length;
+    counter.textContent = itemsleft + " items left";
+    
 }
 
 
-//toDo och footer ska va bort tills man 
+
+
+
 
 
 
