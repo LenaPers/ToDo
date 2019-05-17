@@ -1,0 +1,97 @@
+body {
+    align-items: center;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: rgba(175, 47, 47, 0.15);
+    font-size: 90px;
+    font-weight: 100;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+}
+
+form {
+    align-items: center;
+    display: flex;
+}
+
+/* Hittade nedan via stackoverflow */
+#toDoInput:not(:focus) {
+    font-size: 20px;
+    font-style: italic;
+    opacity: 0.25;
+}
+
+#toDoInput {
+    align-items: center;
+    border: 0.2px solid grey;
+    box-shadow: 10px 10px 25px 5px grey;
+    margin: 5px;
+    min-height: 30px;
+    min-width: 400px;
+    padding: 16px 16px 16px 60px;
+}
+
+#info {
+    color: #BFBFBF;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    margin: 40px;
+}
+
+#create-new-todo{
+    border: solid 10 px;
+    background-color: white;
+    display: none;
+    font-family: Arial, sans-serif;
+    margin: 5px;
+    min-height: 30px;
+    min-width: 400px;
+    padding: 16px 16px 16px 60px;
+}
+
+label {
+    min-width: 400px;
+    min-height: 30px;
+
+}
+
+#footer {
+    align-items: center;
+    align-content: space-around;
+    background-color: white;
+    box-shadow: 10px 10px 25px 5px lightgrey;
+    border: 0.1px solid lightgrey;
+    display: flex;
+    display: none;
+    width: 476px;
+}
+
+button {
+
+    background-color: white;
+    border: 0.2px solid #BFBFBF;
+    color: grey;
+
+}
+
+
+
+#clearCompleted {
+    margin-left: 65px;
+
+}
+
+#all {
+
+    margin-left: 70px;
+    margin-right: 5px;
+}
+
+#active {
+    margin-right: 5px;
+
+}
