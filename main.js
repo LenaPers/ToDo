@@ -35,6 +35,15 @@ form.onsubmit = event => {
     //för att få fram listan när man lagt till något
     document.getElementById('create-new-todo').style.display = 'block';
     document.getElementById('footer').style.display = 'block';
+
+    countItems ++;
+    
+    button.onclick= event => {
+        // event.preventDefault();    
+        li.removeChild(div);
+        countItems --;
+     
+    }
 }
 
 
