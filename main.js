@@ -44,26 +44,44 @@ form.onsubmit = event => {
     button.onclick = event => {
         // event.preventDefault();    
         toDoContainter.removeChild(div);
-        
+
         let itemsleft = toDoContainter.children.length;
         counter.textContent = itemsleft + " items left";
 
-        if(itemsleft === 0)
-        {
+        if (itemsleft === 0) {
             document.getElementById('footer').style.display = 'none';
             document.getElementById('create-new-todo').style.display = 'none';
         }
-    }    
-    
+    }
+
     let itemsleft = toDoContainter.children.length;
     counter.textContent = itemsleft + " items left";
-    
+
 }
 
+let all = document.getElementById("all")
 
+all.onclick = event => {
+    let allToDo = document.getElementById("footer");
+    let toDoContainter = document.getElementById('create-new-todo');
+    toDoContainter.appendChild(allToDo)
 
+}
 
+let active = document.getElementById("active")
 
+active.onclick = event => {
+    let activeToDo = document.querySelectorAll("#active");
+    let toDoContainter = document.getElementById('create-new-todo');
+    toDoContainter.appendChild(activeToDo)
+
+}
+
+let completed =
+
+    completed.onclick = event => {
+
+    }
 
 
 
