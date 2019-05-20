@@ -65,11 +65,11 @@ form.onsubmit = event => {
     completed.addEventListener('change', e => {
     
         if(e.target.checked){
-            completed();
+            completedBox();
         }
 
         if(!e.target.checked){
-            active();
+            activeBox();
         }
     });
     
@@ -77,29 +77,27 @@ form.onsubmit = event => {
     
 }
 
-function completed() {
+function completedBox() {
     var element = document.getElementById("active");
     element.classList.toggle("completed");
     element.classList.remove("active");
   }
 
-  function active() {
+  function activeBox() {
     var element = document.getElementById("completed");
     element.classList.toggle("active");
     element.classList.remove("completed");
   }
 
-let all = document.getElementById("all")
-
-all.onclick = event => {
+let allButton = document.getElementById("all")
+allButton.onclick = event => {
     let allToDo = document.getElementById("footer");
     let toDoContainter = document.getElementById('create-new-todo');
     toDoContainter.appendChild(allToDo)
 }
 
-let active = document.getElementById("active")
-
-active.onclick = event => {
+let activeButton = document.getElementById("active")
+activeButton.onclick = event => {
     let activeToDo = document.querySelectorAll("#active");
     let toDoContainter = document.getElementById('create-new-todo');
     toDoContainter.appendChild(activeToDo)
