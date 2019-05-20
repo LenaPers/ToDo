@@ -65,11 +65,11 @@ form.onsubmit = event => {
     completed.addEventListener('change', e => {
     
         if(e.target.checked){
-            myFunction();
+            completed();
         }
 
         if(!e.target.checked){
-            myFunction();
+            active();
         }
     });
     
@@ -77,12 +77,17 @@ form.onsubmit = event => {
     
 }
 
-function myFunction() {
+function completed() {
     var element = document.getElementById("active");
     element.classList.toggle("completed");
     element.classList.remove("active");
   }
 
+  function active() {
+    var element = document.getElementById("completed");
+    element.classList.toggle("active");
+    element.classList.remove("completed");
+  }
 
 let all = document.getElementById("all")
 
