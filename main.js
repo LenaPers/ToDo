@@ -13,6 +13,7 @@ form.onsubmit = event => {
 
     let div = document.createElement("div");
     div.setAttribute("class", "active");
+    div.setAttribute("id", "active");
     toDoContainter.appendChild(div);
 
     //lägger till texten man skrev in som text till textrutan
@@ -64,13 +65,24 @@ form.onsubmit = event => {
     completed.addEventListener('change', e => {
     
         if(e.target.checked){
-            alert('hej');
+            myFunction();
+        }
+
+        if(!e.target.checked){
+            myFunction();
         }
     });
     
     
     
 }
+
+function myFunction() {
+    var element = document.getElementById("active");
+    element.classList.toggle("completed");
+    element.classList.remove("active");
+  }
+
 
 let all = document.getElementById("all")
 
