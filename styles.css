@@ -79,7 +79,6 @@ button {
 }
 
 
-
 #clearCompleted {
     margin-left: 65px;
 
@@ -93,10 +92,17 @@ button {
 
 #active {
     margin-right: 5px;
-
 }
 
 #create-new-todo button{
 height: 15px;
 
+}
+
+
+.completed{
+
+    color: grey;
+    opacity: 0.5;
+    text-decoration: line-through;
 }
