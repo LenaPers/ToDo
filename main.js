@@ -101,4 +101,16 @@ activeButton.onclick = event => {
 }
 
 
+let completedButton = document.getElementById("completed1")
+completedButton.onclick = event => {
+    let activeToDo = document.getElementsByClassName("active");
+
+    var i;
+    for (i = 0; i < activeToDo.length; i++) {      
+        activeToDo[i].style.display = "none";        
+    }
+
+}
+
+
 
