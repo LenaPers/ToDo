@@ -125,21 +125,18 @@ completedButton.onclick = event => {
 
 
 let clearCompleted = document.getElementById("clearCompleted")
+
 clearCompleted.onclick = event => {
     let done = document.getElementsByClassName("completed");
 
     var i;
     for (i = 0; i < done.length; i++) {      
         done[i].remove(); 
-    }
+    }    
     let itemslefts = toDoContainter.children.length;
-    
-
-    if(itemslefts.length === 0){
-
+    if(itemslefts === 0){
         clearCompleted.style.display = "none";
     }
-
 }
 
 
