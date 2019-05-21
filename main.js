@@ -2,6 +2,9 @@ const form = document.querySelector("form");
 let counter = document.createElement("p");
 let footer = document.getElementById('footer');
 let toDoContainter = document.getElementById('create-new-todo');
+
+let itemsleftsss = document.getElementsByClassName('active');
+
 footer.appendChild(counter);
 
 form.onsubmit = event => {
@@ -42,7 +45,7 @@ form.onsubmit = event => {
         // event.preventDefault();    
         toDoContainter.removeChild(div);
 
-        let itemsleft = toDoContainter.children.length;
+        let itemsleft = itemsleftsss.length;
         counter.textContent = itemsleft + " items left";
 
         if (itemsleft === 0) {
@@ -51,7 +54,7 @@ form.onsubmit = event => {
         }
     }
 
-    let itemsleft = toDoContainter.children.length;
+    let itemsleft = itemsleftsss.length;
     counter.textContent = itemsleft + " items left";
 
     checkbox.addEventListener('change', e => {
@@ -61,6 +64,9 @@ form.onsubmit = event => {
 
             checkedElement.classList.add("completed");
             checkedElement.classList.remove("active");
+
+            let itemsleft = itemsleftsss.length;
+            counter.textContent = itemsleft + " items left";
         }
 
         if (!e.target.checked) {
@@ -68,19 +74,19 @@ form.onsubmit = event => {
 
             checkedElement.classList.toggle("active");
             checkedElement.classList.remove("completed");
+            
+            let itemsleft = itemsleftsss.length;
+            counter.textContent = itemsleft + " items left";
         }
 
     });
-
     
     if(itemsleft === 0){
         clearCompleted.style.display = "none";
     }
     else{
         clearCompleted.style.display = "inline-block";
-    }
-
-    
+    }    
 }
 
 let allButton = document.getElementById("all")
@@ -116,7 +122,6 @@ activeButton.onclick = event => {
     }
 }
 
-
 let completedButton = document.getElementById("completed1")
 completedButton.onclick = event => {
     let activeToDo = document.getElementsByClassName("active")
@@ -137,12 +142,10 @@ let clearCompleted = document.getElementById("clearCompleted")
 
 clearCompleted.onclick = event => {
     let done = document.getElementsByClassName("completed");
-    // tar bara bort en eftersom att längden på de som är bortplockat ändrar sig eftersom de tas bort
-
-    var i;
-    for (i = 0; done.length < l; i++) {      
-        done[i].remove(); 
-    }    
+    
+    while(done.length > 0) {
+        done[0].remove();
+    }
 }
 
 
