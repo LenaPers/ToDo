@@ -68,7 +68,6 @@ form.onsubmit = event => {
 
             checkedElement.classList.toggle("active");
             checkedElement.classList.remove("completed");
-            itemsleft--;
         }
     });
 }
@@ -80,12 +79,16 @@ allButton.onclick = event => {
 
 let activeButton = document.getElementById("active")
 activeButton.onclick = event => {
-    let activeToDo = document.getElementsByClassName("active");
+    let activeToDo = document.getElementsByClassName("completed");
     let toDoContainter = document.getElementById('create-new-todo');
 
     var i;
     for (i = 0; i < activeToDo.length; i++) {
-        toDoContainter.appendChild(activeToDo[i])
+
+        
+
+            activeToDo[i].style.display = "none";
+        
     }
 
 }
