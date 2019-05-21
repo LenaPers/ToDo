@@ -1,13 +1,13 @@
 const form = document.querySelector("form");
 let counter = document.createElement("p");
 let footer = document.getElementById('footer');
+let toDoContainter = document.getElementById('create-new-todo');
 footer.appendChild(counter);
 
 form.onsubmit = event => {
     event.preventDefault();
     //sparar ner både input och listan att placera input i
     let toDoInput = document.getElementById("toDoInput");
-    let toDoContainter = document.getElementById('create-new-todo');
 
     let div = document.createElement("div");
     div.setAttribute("class", "active");
@@ -131,6 +131,13 @@ clearCompleted.onclick = event => {
     var i;
     for (i = 0; i < done.length; i++) {      
         done[i].remove(); 
+    }
+    let itemslefts = toDoContainter.children.length;
+    
+
+    if(itemslefts.length === 0){
+
+        clearCompleted.style.display = "none";
     }
 
 }
