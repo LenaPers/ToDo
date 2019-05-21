@@ -18,12 +18,13 @@ form.onsubmit = event => {
 
     //lägger till texten man skrev in som text till textrutan
     let newToDo = document.createElement("label");
-    newToDo.setAttribute("class", "hej");
+    // tror ej vi behöver denna newToDo.setAttribute("class", "hej");
     div.appendChild(newToDo);
 
     //lägger till checkbox rutan och sparar info om att den finns
     let checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
+    checkbox.setAttribute("class", "checkbox");
 
     newToDo.appendChild(checkbox);
 
@@ -31,7 +32,8 @@ form.onsubmit = event => {
     span.textContent = toDoInput.value;
     newToDo.appendChild(span);
 
-    let button = document.createElement('button');
+    let button = document.createElement('img');
+    button.setAttribute("src", "kryss.png");
     div.appendChild(button);
 
     //gör att texten i rutan försvinner dvs sätter texten till inget
