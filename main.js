@@ -75,20 +75,27 @@ form.onsubmit = event => {
 let allButton = document.getElementById("all")
 allButton.onclick = event => {
 
+    let activeToDo = document.getElementsByClassName("active");
+    let completedToDo = document.getElementsByClassName("completed");
+
+    var i;
+    for (i = 0; i < activeToDo.length; i++) {      
+        activeToDo[i].style.display = "block";        
+    }
+
+    var x;
+    for (x = 0; x < completedToDo.length; x++) {      
+        completedToDo[x].style.display = "block";        
+    }
 }
 
 let activeButton = document.getElementById("active")
 activeButton.onclick = event => {
     let activeToDo = document.getElementsByClassName("completed");
-    let toDoContainter = document.getElementById('create-new-todo');
 
     var i;
-    for (i = 0; i < activeToDo.length; i++) {
-
-        
-
-            activeToDo[i].style.display = "none";
-        
+    for (i = 0; i < activeToDo.length; i++) {      
+        activeToDo[i].style.display = "none";        
     }
 
 }
