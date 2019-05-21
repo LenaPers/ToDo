@@ -91,24 +91,36 @@ allButton.onclick = event => {
 
 let activeButton = document.getElementById("active")
 activeButton.onclick = event => {
-    let activeToDo = document.getElementsByClassName("completed");
+    let completedToDo = document.getElementsByClassName("completed")
+    let activeToDo = document.getElementsByClassName("active")
 
     var i;
-    for (i = 0; i < activeToDo.length; i++) {      
-        activeToDo[i].style.display = "none";        
+    for (i = 0; i < completedToDo.length; i++) {      
+        completedToDo[i].style.display = "none";        
+    }
+
+    var x;
+    for (x = 0; x < activeToDo.length; x++) {      
+        activeToDo[x].style.display = "block";        
     }
 }
 
 
 let completedButton = document.getElementById("completed1")
 completedButton.onclick = event => {
-    let activeToDo = document.getElementsByClassName("active");
+    let activeToDo = document.getElementsByClassName("active")
+    let completedToDo = document.getElementsByClassName("completed");
 
     var i;
     for (i = 0; i < activeToDo.length; i++) {      
-        activeToDo[i].style.display = "none";        
+        activeToDo[i].style.display = "none";  
+              
     }
 
+    var x;
+    for (x = 0; x < completedToDo.length; x++) {      
+        completedToDo[x].style.display = "block";              
+    }
 }
 
 
@@ -119,8 +131,6 @@ clearCompleted.onclick = event => {
     var i;
     for (i = 0; i < done.length; i++) {      
         done[i].remove(); 
-
-    counter.textContent = itemsleft + " items left";
     }
 
 }
