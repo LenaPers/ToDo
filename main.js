@@ -1,5 +1,3 @@
-// Jakobs kod
-
 const form = document.querySelector("form");
 let counter = document.createElement("p");
 let footer = document.getElementById('footer');
@@ -13,18 +11,17 @@ form.onsubmit = event => {
 
     let div = document.createElement("div");
     div.setAttribute("class", "active");
-    div.setAttribute("id", "active");
     toDoContainter.appendChild(div);
 
     //lägger till texten man skrev in som text till textrutan
     let newToDo = document.createElement("label");
-    newToDo.setAttribute("id", "checkbox");
+    newToDo.setAttribute("class", "hej");
     div.appendChild(newToDo);
 
     //lägger till checkbox rutan och sparar info om att den finns
     let checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
-    
+
     newToDo.appendChild(checkbox);
 
     let span = document.createElement("span");
@@ -34,15 +31,12 @@ form.onsubmit = event => {
     let button = document.createElement('button');
     div.appendChild(button);
 
-
     //gör att texten i rutan försvinner dvs sätter texten till inget
     document.getElementById('toDoInput').value = '';
 
     //för att få fram listan när man lagt till något
     document.getElementById('create-new-todo').style.display = 'block';
     document.getElementById('footer').style.display = 'block';
-
-
 
     button.onclick = event => {
         // event.preventDefault();    
@@ -60,47 +54,40 @@ form.onsubmit = event => {
     let itemsleft = toDoContainter.children.length;
     counter.textContent = itemsleft + " items left";
 
-    let completed = document.getElementById('checkbox')
-    
-    completed.addEventListener('change', e => {
-    
-        if(e.target.checked){
-            completedBox();
+    checkbox.addEventListener('change', e => {
+
+        if (e.target.checked) {
+            let checkedElement = e.target.parentNode.parentNode;
+
+            checkedElement.classList.add("completed");
+            checkedElement.classList.remove("active");
         }
 
-        if(!e.target.checked){
-            activeBox();
+        if (!e.target.checked) {
+            let checkedElement = e.target.parentNode.parentNode;
+
+            checkedElement.classList.toggle("active");
+            checkedElement.classList.remove("completed");
+            itemsleft--;
         }
     });
-    
-    
-    
 }
-
-function completedBox() {
-    var element = document.getElementById("active");
-    element.classList.toggle("completed");
-    element.classList.remove("active");
-  }
-
-  function activeBox() {
-    var element = document.getElementById("completed");
-    element.classList.toggle("active");
-    element.classList.remove("completed");
-  }
 
 let allButton = document.getElementById("all")
 allButton.onclick = event => {
-    let allToDo = document.getElementById("footer");
-    let toDoContainter = document.getElementById('create-new-todo');
-    toDoContainter.appendChild(allToDo)
+
 }
 
 let activeButton = document.getElementById("active")
 activeButton.onclick = event => {
-    let activeToDo = document.querySelectorAll("#active");
+    let activeToDo = document.getElementsByClassName("active");
     let toDoContainter = document.getElementById('create-new-todo');
-    toDoContainter.appendChild(activeToDo)
+
+    var i;
+    for (i = 0; i < activeToDo.length; i++) {
+        toDoContainter.appendChild(activeToDo[i])
+    }
+
 }
 
 
