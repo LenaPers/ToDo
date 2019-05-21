@@ -97,7 +97,6 @@ activeButton.onclick = event => {
     for (i = 0; i < activeToDo.length; i++) {      
         activeToDo[i].style.display = "none";        
     }
-
 }
 
 
@@ -111,6 +110,22 @@ completedButton.onclick = event => {
     }
 
 }
+
+
+let clearCompleted = document.getElementById("clearCompleted")
+clearCompleted.onclick = event => {
+    let done = document.getElementsByClassName("completed");
+
+    var i;
+    for (i = 0; i < done.length; i++) {      
+        done[i].remove(); 
+
+    counter.textContent = itemsleft + " items left";
+    }
+
+}
+
+
 
 
 
