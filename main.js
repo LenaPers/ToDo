@@ -69,7 +69,18 @@ form.onsubmit = event => {
             checkedElement.classList.toggle("active");
             checkedElement.classList.remove("completed");
         }
+
     });
+
+    
+    if(itemsleft === 0){
+        clearCompleted.style.display = "none";
+    }
+    else{
+        clearCompleted.style.display = "inline-block";
+    }
+
+    
 }
 
 let allButton = document.getElementById("all")
@@ -113,8 +124,7 @@ completedButton.onclick = event => {
 
     var i;
     for (i = 0; i < activeToDo.length; i++) {      
-        activeToDo[i].style.display = "none";  
-              
+        activeToDo[i].style.display = "none";                
     }
 
     var x;
@@ -123,23 +133,20 @@ completedButton.onclick = event => {
     }
 }
 
-
 let clearCompleted = document.getElementById("clearCompleted")
 
 clearCompleted.onclick = event => {
     let done = document.getElementsByClassName("completed");
+    // tar bara bort en eftersom att längden på de som är bortplockat ändrar sig eftersom de tas bort
 
     var i;
-    for (i = 0; i < done.length; i++) {      
+    for (i = 0; done.length < l; i++) {      
         done[i].remove(); 
     }    
-    let itemslefts = toDoContainter.children.length;
-    if(itemslefts === 0){
-        clearCompleted.style.display = "none";
-    }
 }
 
 
+//använda nån typ av räknare för att köra items ist. length på div.
 
 
 
