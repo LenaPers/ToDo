@@ -58,6 +58,7 @@ form.onsubmit = event => {
 
         if (e.target.checked) {
             let checkedElement = e.target.parentNode.parentNode;
+            toDoContainter.removeChild(itemsleft)
 
             checkedElement.classList.add("completed");
             checkedElement.classList.remove("active");
@@ -68,7 +69,6 @@ form.onsubmit = event => {
 
             checkedElement.classList.toggle("active");
             checkedElement.classList.remove("completed");
-            itemsleft--;
         }
     });
 }
@@ -89,6 +89,3 @@ activeButton.onclick = event => {
     }
 
 }
-
-
-
