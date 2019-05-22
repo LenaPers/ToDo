@@ -152,15 +152,20 @@ clearCompleted.onclick = event => {
 }
 
 markAll.onclick = event => {  
-    
     // gör alla till class completed och en checked på checkbox
     var i;
-    for (i = 0; i < toDoContainter.length; i++) {      
+    for (i = 0; i < toDoContainter.length; i++) {       
         toDoContainter[i].checked = true;  
-        toDoContainter[i].closest('div').classList.add('completed')              
-    }
-
-
+        toDoContainter[i].closest('div').classList.add('completed')     
+    }  
     // om alla redan är checked ska alla bli ochecked       
 }
 
+// gör så allt är ocheckat och active
+// toDoContainter[i].checked = false; 
+// toDoContainter[i].closest('div').classList.remove('completed')
+// toDoContainter[i].closest('div').classList.add('active')
+
+// gör så allt är checkat
+// toDoContainter[i].checked = true;  
+// toDoContainter[i].closest('div').classList.add('completed')
