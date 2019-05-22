@@ -56,7 +56,6 @@ form {
 label {
     min-width: 400px;
     min-height: 30px;
-
 }
 
 #footer {
@@ -67,8 +66,7 @@ label {
     border: 0.1px solid lightgrey;
     display: flex;
     display: none;
-    width: 476px;
-    
+    width: 476px;    
 }
 
 button {
@@ -78,13 +76,15 @@ button {
     color: grey;
     background:url(kryss.png) no-repeat;
     border:none;
-
 }
 
+#markAll{
+    width: 30px;
+    height: 30px;
+}
 
 #clearCompleted {
     margin-left: 65px;
-
 }
 
 #all {
@@ -100,7 +100,6 @@ button {
 #create-new-todo button{
 height: 15px;
 }
-
 
 .completed{
 

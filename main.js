@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 let counter = document.createElement("p");
 let footer = document.getElementById('footer');
 let toDoContainter = document.getElementById('create-new-todo');
+let markAll = document.getElementById('markAll');
 
 let itemsleftsss = document.getElementsByClassName('active');
 
@@ -54,7 +55,7 @@ form.onsubmit = event => {
             document.getElementById('footer').style.display = 'none';
             document.getElementById('create-new-todo').style.display = 'none';
         }
-    }
+    }  
 
     let itemsleft = itemsleftsss.length;
     counter.textContent = itemsleft + " items left";
@@ -150,8 +151,9 @@ clearCompleted.onclick = event => {
     }
 }
 
+markAll.onclick = event => {
+    // alla barn i toDoContainter ska bli checked
 
-//använda nån typ av räknare för att köra items ist. length på div.
-
-
+    // om alla redan är checked ska alla bli ochecked       
+}
 
