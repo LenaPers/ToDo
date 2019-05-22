@@ -151,8 +151,15 @@ clearCompleted.onclick = event => {
     }
 }
 
-markAll.onclick = event => {
-    // alla barn i toDoContainter ska bli checked
+markAll.onclick = event => {  
+    
+    // gör alla till class completed och en checked på checkbox
+    var i;
+    for (i = 0; i < toDoContainter.length; i++) {      
+        toDoContainter[i].checked = true;  
+        toDoContainter[i].closest('div').classList.add('completed')              
+    }
+
 
     // om alla redan är checked ska alla bli ochecked       
 }
