@@ -4,7 +4,8 @@ let footer = document.getElementById('footer');
 let toDoContainter = document.getElementById('create-new-todo');
 let markAll = document.getElementById('markAll');
 
-let itemsleftsss = document.getElementsByClassName('active');
+
+let itemsleft = document.getElementsByClassName('active');
 
 footer.appendChild(counter);
 
@@ -13,20 +14,19 @@ form.onsubmit = event => {
     //sparar ner både input och listan att placera input i
     let toDoInput = document.getElementById("toDoInput");
 
+    //Skapar dive hela todoraden ligger i
     let div = document.createElement("div");
     div.setAttribute("class", "active");
     toDoContainter.appendChild(div);
 
     //lägger till texten man skrev in som text till textrutan
     let newToDo = document.createElement("label");
-    // tror ej vi behöver denna newToDo.setAttribute("class", "hej");
     div.appendChild(newToDo);
 
     //lägger till checkbox rutan och sparar info om att den finns
     let checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
     checkbox.setAttribute("class", "checkbox");
-
     newToDo.appendChild(checkbox);
 
     let span = document.createElement("span");
@@ -44,8 +44,7 @@ form.onsubmit = event => {
     document.getElementById('create-new-todo').style.display = 'block';
     document.getElementById('footer').style.display = 'block';
 
-    button.onclick = event => {
-        // event.preventDefault();    
+    button.onclick = event => {   
         toDoContainter.removeChild(div);
 
         let itemsleft = itemsleftsss.length;
@@ -57,8 +56,7 @@ form.onsubmit = event => {
         }
     }  
 
-    let itemsleft = itemsleftsss.length;
-    counter.textContent = itemsleft + " items left";
+    counter.textContent = itemsleft.length + " items left";
 
     checkbox.addEventListener('change', e => {
 
@@ -68,8 +66,7 @@ form.onsubmit = event => {
             checkedElement.classList.add("completed");
             checkedElement.classList.remove("active");
 
-            let itemsleft = itemsleftsss.length;
-            counter.textContent = itemsleft + " items left";
+            counter.textContent = itemsleft.length + " items left";
         }
 
         if (!e.target.checked) {
@@ -77,9 +74,8 @@ form.onsubmit = event => {
 
             checkedElement.classList.toggle("active");
             checkedElement.classList.remove("completed");
-            
-            let itemsleft = itemsleftsss.length;
-            counter.textContent = itemsleft + " items left";
+
+            counter.textContent = itemsleft.length + " items left";
         }
 
     });
@@ -94,7 +90,6 @@ form.onsubmit = event => {
 
 let allButton = document.getElementById("all")
 allButton.onclick = event => {
-
     let activeToDo = document.getElementsByClassName("active");
     let completedToDo = document.getElementsByClassName("completed");
 
@@ -151,21 +146,29 @@ clearCompleted.onclick = event => {
     }
 }
 
-markAll.onclick = event => {  
-    // gör alla till class completed och en checked på checkbox
-    var i;
-    for (i = 0; i < toDoContainter.length; i++) {       
-        toDoContainter[i].checked = true;  
-        toDoContainter[i].closest('div').classList.add('completed')     
+markAll.onclick = event => {
+    let toDoContainterArray = Array.from(document.getElementById('create-new-todo'));
+    //om någon är checkad ändra alla till completed 
+    if(toDoContainterArray.some(x=> x.checked)){
+        var i;
+        for (i = 0; i < toDoContainter.length; i++) {   
+            toDoContainter[i].checked = false; 
+            toDoContainter[i].closest('div').classList.remove('completed')
+            toDoContainter[i].closest('div').classList.add('active')
+        } 
+        
+        counter.textContent = itemsleft.length + " items left";
+    }
+
+    // //om någon är uncheckad ändra alla till active
+    else{   
+        var i;
+        for (i = 0; i < toDoContainter.length; i++) {
+            toDoContainter[i].checked = true;  
+            toDoContainter[i].closest('div').classList.remove('active')
+            toDoContainter[i].closest('div').classList.add('completed')           
+        }
+
+        counter.textContent = itemsleft.length + " items left";
     }  
-    // om alla redan är checked ska alla bli ochecked       
 }
-
-// gör så allt är ocheckat och active
-// toDoContainter[i].checked = false; 
-// toDoContainter[i].closest('div').classList.remove('completed')
-// toDoContainter[i].closest('div').classList.add('active')
-
-// gör så allt är checkat
-// toDoContainter[i].checked = true;  
-// toDoContainter[i].closest('div').classList.add('completed')
