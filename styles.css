@@ -31,6 +31,7 @@ form {
     align-items: center;
     border: 0px solid grey;
     outline-width: 0;
+    font-size: 20px;
 
     margin: 5px;
     min-height: 30px;
@@ -50,8 +51,7 @@ form {
 #main {
     background-color: white;
     box-shadow: 10px 10px 25px 5px lightgrey;
-
-
+    border: 0.1px solid lightgrey;
 }
 
 #create-new-todo{
@@ -69,7 +69,6 @@ form {
 #footer {
     align-items: center;
     align-content: space-around;
-    border: 0.1px solid lightgrey;
     background-color: white;
     
     display: flex;
@@ -159,9 +158,10 @@ form div {
     display: flex;
     align-content: space-around;
     margin: 0px;
-    border: 0.1px groove lightgrey;
-
-    
+    border: 0.1px solid lightgrey;
+    font-family: Arial, sans-serif;
+    /* font-size: 10px;
+     */
 
 
     

@@ -139,14 +139,23 @@ let clearCompleted = document.getElementById("clearCompleted")
 clearCompleted.onclick = event => {
     let done = document.getElementsByClassName("completed");
 
-    while (done.length > 0) {
+    while (done.length > 0){
         done[length].remove();
     }
     
+    if (itemsleft.length === 0) {
+        clearCompleted.style.display = "none";
+        footer.style.display = "none";
+        toDoContainter.style.display = "none";
+    } 
+    else {
+        clearCompleted.style.display = "inline-block";
+    }    
 }
 
 markAll.onclick = event => {
     let toDoContainterArray = Array.from(document.getElementById('create-new-todo'));
+    
     //om någon är checkad ändra alla till completed 
     if(toDoContainterArray.some(x=> x.checked)){
         var i;
@@ -154,8 +163,7 @@ markAll.onclick = event => {
             toDoContainter[i].checked = false; 
             toDoContainter[i].closest('div').classList.remove('completed')
             toDoContainter[i].closest('div').classList.add('active')
-        } 
-        
+        }         
         counter.textContent = itemsleft.length + " items left";
     }
 
@@ -167,7 +175,6 @@ markAll.onclick = event => {
             toDoContainter[i].closest('div').classList.remove('active')
             toDoContainter[i].closest('div').classList.add('completed')           
         }
-
-        counter.textContent = itemsleft.length + " items left";
+        counter.textContent = itemsleft.length + " items left";        
     }  
 }
