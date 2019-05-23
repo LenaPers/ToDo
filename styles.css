@@ -16,6 +16,7 @@ h1 {
 form {
     align-items: center;
     display: flex;
+   
 }
 
 /* Hittade nedan via stackoverflow */
@@ -23,12 +24,14 @@ form {
     font-size: 20px;
     font-style: italic;
     opacity: 0.25;
+    
 }
 
 #toDoInput {
     align-items: center;
-    border: 0.2px solid grey;
-    box-shadow: 10px 10px 25px 5px grey;
+    border: 0px solid grey;
+    outline-width: 0;
+
     margin: 5px;
     min-height: 30px;
     min-width: 400px;
@@ -42,20 +45,21 @@ form {
     margin: 40px;
 }
 
-#create-new-todo{
+#main{
+   background-color: white;
+    box-shadow: 10px 10px 25px 5px grey;
+
+   
+}
+
+#create-new-todo {
     border: solid 10 px;
     background-color: white;
     display: none;
     font-family: Arial, sans-serif;
-    margin: 5px;
-    min-height: 30px;
-    min-width: 400px;
-    padding: 16px 16px 16px 60px;
-}
-
-label {
-    min-width: 400px;
-    min-height: 30px;
+    display: 65.040;width: 440px;
+    min-height: 20px;
+    border: 0px solid grey;
 }
 
 #footer {
@@ -66,23 +70,24 @@ label {
     border: 0.1px solid lightgrey;
     display: flex;
     display: none;
-     
-    
-    margin: 5px;
-    min-height: 30px;
+    width: 476px;
+}
+
+label {
     min-width: 400px;
+    min-height: 30px;
 }
 
 button {
 
     background-color: white;
-    /* border: 0.2px solid #BFBFBF; */
+    border: 0.2px solid #BFBFBF;
     color: grey;
-    background:url(kryss.png) no-repeat;
-    border:none;
+    background: url(xclose.png) no-repeat;
+    border: none;
 }
 
-#markAll{
+#markAll {
     width: 30px;
     height: 30px;
 }
@@ -101,34 +106,49 @@ button {
     margin-right: 5px;
 }
 
-#create-new-todo button{
-height: 15px;
+#create-new-todo button {
+    height: 15px;
 }
 
-.completed{
+.completed {
 
     color: grey;
     opacity: 0.5;
     text-decoration: line-through;
 }
 
-.checkbox{
-    width: 40px;
-    height: 40px;
+.checkbox {
+
+    width: 1.3em;
+    height: 1.3em;
     background-color: white;
     border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+
+}
+.checkbox:checked {
+    background-color: blue;
 }
 
-img{
-    width: 25px;
-    height: 23,5px;
+
+
+img {
+    width: 20px;
+    height: 18px;
     opacity: 0.5;
+    
 }
 
- /* :hover för att göra ngt när man hoovrar, vilket element? */
-form div{
+
+/* :hover för att göra ngt när man hoovrar, vilket element? */
+form div {
 
     display: flex;
     align-content: space-around;
 
 }
+
