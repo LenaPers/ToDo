@@ -16,7 +16,7 @@ h1 {
 form {
     align-items: center;
     display: flex;
-   
+
 }
 
 /* Hittade nedan via stackoverflow */
@@ -24,7 +24,7 @@ form {
     font-size: 20px;
     font-style: italic;
     opacity: 0.25;
-    
+
 }
 
 #toDoInput {
@@ -35,7 +35,7 @@ form {
     margin: 5px;
     min-height: 30px;
     min-width: 400px;
-    padding: 16px 16px 16px 60px;
+    padding: 16px 16px 16px 0px;
 }
 
 #info {
@@ -45,37 +45,48 @@ form {
     margin: 40px;
 }
 
-#main{
-   background-color: white;
-    box-shadow: 10px 10px 25px 5px grey;
+#main {
+    background-color: white;
+    box-shadow: 10px 10px 25px 5px lightgrey;
 
-   
+
 }
 
-#create-new-todo {
+#create-new-todo{
     border: solid 10 px;
     background-color: white;
     display: none;
     font-family: Arial, sans-serif;
-    display: 65.040;width: 440px;
+    display: 65.040;
+    width: 440px;
     min-height: 20px;
     border: 0px solid grey;
+
 }
 
 #footer {
     align-items: center;
     align-content: space-around;
-    background-color: white;
-    box-shadow: 10px 10px 25px 5px lightgrey;
     border: 0.1px solid lightgrey;
+    background-color: white;
+    
     display: flex;
     display: none;
-    width: 476px;
+
+    box-shadow:
+    0 1px 1px rgba(0,0,0,0.15),
+    0 10px 0 -5px #eee,
+    0 10px 1px -4px rgba(0,0,0,0.15),
+    0 20px 0 -10px #eee,
+    0 20px 1px -9px rgba(0,0,0,0.15);
+    padding: 10px 10px 10px 15px
 }
+
 
 label {
     min-width: 400px;
     min-height: 30px;
+    padding: 15px 15px 15px 0px;
 }
 
 button {
@@ -101,11 +112,6 @@ button {
     margin-left: 70px;
     margin-right: 5px;
 }
-
-.active {
-    margin-right: 5px;
-}
-
 #create-new-todo button {
     height: 15px;
 }
@@ -130,6 +136,7 @@ button {
     cursor: pointer;
 
 }
+
 .checkbox:checked {
     background-color: blue;
 }
@@ -140,7 +147,7 @@ img {
     width: 20px;
     height: 18px;
     opacity: 0.5;
-    
+
 }
 
 
@@ -149,6 +156,12 @@ form div {
 
     display: flex;
     align-content: space-around;
+    margin: 0px;
+    border: 0.1px groove lightgrey;
 
+    
+
+
+    
 }
 
