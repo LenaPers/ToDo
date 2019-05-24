@@ -1,13 +1,15 @@
 const form = document.querySelector("form");
 let footer = document.getElementById('footer');
-let counter = document.createElement("p");
+let counter = document.createElement("label");
+counter.setAttribute('id', 'labelCounter');
 let toDoContainter = document.getElementById('create-new-todo');
 let markAll = document.getElementById('markAll');
 
 
 let itemsleft = document.getElementsByClassName('active');
 
-footer.appendChild(counter);
+let all= document.getElementById('all')
+footer.insertBefore(counter, all);
 
 form.onsubmit = event => {
     event.preventDefault();
