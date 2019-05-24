@@ -16,15 +16,12 @@ h1 {
 form {
     align-items: center;
     display: flex;
-
 }
 
-/* Hittade nedan via stackoverflow */
 #toDoInput:not(:focus) {
     font-size: 20px;
     font-style: italic;
     opacity: 0.25;
-
 }
 
 #toDoInput {
@@ -45,7 +42,6 @@ form {
     font-size: 10px;
     margin: 40px;
     text-align: center;
-
 }
 
 #main {
@@ -63,7 +59,6 @@ form {
     width: 440px;
     min-height: 20px;
     border: 0px solid grey;
-
 }
 
 #footer {
@@ -91,7 +86,6 @@ label {
 }
 
 button {
-
     background-color: white;
     border: 0.2px solid #BFBFBF;
     color: grey;
@@ -167,3 +161,27 @@ form div {
     
 }
 
+
+@media (max-width: 375px){
+    #input, #main, #create-new-todo{
+        width: 250px;
+        /* height: 50px; */
+        font-size: 15 px;
+    }
+
+    #toDoInput{
+        min-width: 200px;
+    }
+   
+    #footer{
+        width: 225px;
+    }
+
+    #toDoInput:not(:focus) {
+        font-size: 15px;  
+        width: 250px; 
+    }
+    h1 {
+        font-size: 70px;
+    }
+};
