@@ -16,6 +16,7 @@ h1 {
 form {
     align-items: center;
     display: flex;
+    align-content: space-around;
 }
 
 #toDoInput:not(:focus) {
@@ -29,7 +30,6 @@ form {
     border: 0px solid grey;
     outline-width: 0;
     font-size: 20px;
-
     margin: 5px;
     min-height: 30px;
     min-width: 400px;
@@ -50,47 +50,47 @@ form {
     border: 0.1px solid lightgrey;
 }
 
-#create-new-todo{
+#create-new-todo {
     border: solid 10 px;
     background-color: white;
     display: none;
     font-family: Arial, sans-serif;
-    display: 65.040;
     width: 440px;
     min-height: 20px;
     border: 0px solid grey;
 }
 
 #footer {
+    flex-direction: column-reverse;
     align-items: center;
     align-content: space-around;
     background-color: white;
-    
-    display: flex;
-    display: none;
-
+    width: 415px;
+    /* display: flex; */
+    /* display: none; */
     box-shadow:
-    0 1px 1px rgba(0,0,0,0.15),
-    0 10px 0 -5px #eee,
-    0 10px 1px -4px rgba(0,0,0,0.15),
-    0 20px 0 -10px #eee,
-    0 20px 1px -9px rgba(0,0,0,0.15);
-    padding: 10px 10px 10px 15px
+        0 1px 1px rgba(0, 0, 0, 0.15),
+        0 10px 0 -5px #eee,
+        0 10px 1px -4px rgba(0, 0, 0, 0.15),
+        0 20px 0 -10px #eee,
+        0 20px 1px -9px rgba(0, 0, 0, 0.15);
+    padding: 10px 10px 10px 15px;
 }
 
 
-label {
+#labelCounter {
     min-width: 400px;
     min-height: 30px;
     padding: 15px 15px 15px 0px;
+    font-family: Arial, sans-serif;
+    font-size: 13.3px;
+    color: grey;
 }
 
 button {
     background-color: white;
     border: 0.2px solid #BFBFBF;
     color: grey;
-    background: url(xclose.png) no-repeat;
-    border: none;
 }
 
 #markAll {
@@ -98,21 +98,11 @@ button {
     height: 30px;
 }
 
-#clearCompleted {
-    margin-left: 65px;
-}
-
-#all {
-
-    margin-left: 70px;
-    margin-right: 5px;
-}
 #create-new-todo button {
     height: 15px;
 }
 
 .completed {
-
     color: grey;
     opacity: 0.5;
     text-decoration: line-through;
@@ -149,39 +139,53 @@ img {
 /* :hover för att göra ngt när man hoovrar, vilket element? */
 form div {
 
-    display: flex;
-    align-content: space-around;
+
+
     margin: 0px;
     border: 0.1px solid lightgrey;
     font-family: Arial, sans-serif;
-    /* font-size: 10px;
-     */
 
 
-    
 }
 
 
-@media (max-width: 375px){
-    #input, #main, #create-new-todo{
+@media(max-width: 375px) {
+
+    #input,
+    #main,
+    #create-new-todo {
+
         width: 250px;
-        /* height: 50px; */
-        font-size: 15 px;
+        font-size: 15px;
     }
 
-    #toDoInput{
+
+    #toDoInput,
+    #labelcount {
         min-width: 200px;
     }
-   
-    #footer{
+
+    input {
+        width: 20px;
+    }
+
+    #footer {
         width: 225px;
     }
 
-    #toDoInput:not(:focus) {
-        font-size: 15px;  
-        width: 250px; 
+    #all {
+
+        margin-left: 0px;
+        margin-right: 5px;
     }
-    h1 {
-        font-size: 70px;
+
+    #active {
+        margin-left: 20px;
+        margin-right: 20px
     }
-};
+
+    #clearCompleted {
+
+        margin-top: 20px;
+    }
+}
