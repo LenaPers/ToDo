@@ -1,14 +1,12 @@
 const form = document.querySelector("form");
 let footer = document.getElementById('footer');
 let counter = document.createElement("label");
-counter.setAttribute('id', 'labelCounter');
+counter.setAttribute('class', 'labelCounter');
 let toDoContainter = document.getElementById('create-new-todo');
-let markAll = document.getElementById('markAll');
-
-
 let itemsleft = document.getElementsByClassName('active');
 
 let all= document.getElementById('all')
+let markAll = document.getElementById('markAll');
 footer.insertBefore(counter, all);
 
 form.onsubmit = event => {
@@ -26,7 +24,7 @@ form.onsubmit = event => {
     
     let span = document.createElement("span");
     span.textContent = toDoInput.value;
-    let button = document.createElement("img");
+    let imgCross = document.createElement("img");
     if (span.textContent !="")
     {
         //målar upp diven
@@ -41,9 +39,9 @@ form.onsubmit = event => {
         //lägger till texten man skrev i input
         newToDo.appendChild(span);
         //lägger till kryssbildern till diven
-        button.setAttribute("src", "xclose.png");
-        button.setAttribute("class", "cross");
-        div.appendChild(button);
+        imgCross.setAttribute("src", "xclose.png");
+        imgCross.setAttribute("class", "cross");
+        div.appendChild(imgCross);
 
           //för att få fram listan när man lagt till något
         document.getElementById('create-new-todo').style.display = 'inline-block';
@@ -58,9 +56,8 @@ form.onsubmit = event => {
     document.getElementById('toDoInput').value = '';  
     counter.textContent = itemsleft.length + " items left";
 
-    button.onclick = event => {   
+    butimgCrosston.onclick = event => {   
         toDoContainter.removeChild(div);
-
         counter.textContent = itemsleft.length + " items left";
 
         if (toDoContainter.length === 0) {
@@ -86,17 +83,19 @@ form.onsubmit = event => {
             checkedElement.classList.add("active");
             checkedElement.classList.remove("completed");
 
-            counter.textContent = itemsleft.length + " items left";
+           counter.textContent = itemsleft.length + " items left";
         }
 
     });
 
     if (itemsleft === 0) {
         clearCompleted.style.display = "none";
-    } else {
+    } 
+    else {
         clearCompleted.style.display = "inline-block";
     }
 }
+
 let activeToDo = document.getElementsByClassName("active");
 let completedToDo = document.getElementsByClassName("completed");
 
