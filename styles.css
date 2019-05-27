@@ -141,14 +141,20 @@ form div {
 }
 
 .cross{
-    margin-left: auto;
-    align-content: center;
+    margin-left: auto;    
 }
 
 #clearCompleted {
-
     margin-top: 20px;
     margin-left: 60px;
+}
+
+span{
+    margin-left: 10px;
+}
+.checkbox{
+
+    margin-left: 10px;
 }
 
 @media(max-width: 375px) {
