@@ -37,14 +37,15 @@ form.onsubmit = event => {
 
     let button = document.createElement("img");
     button.setAttribute("src", "xclose.png");
+    button.setAttribute("class", "cross");
     div.appendChild(button);
 
     //gör att texten i rutan försvinner dvs sätter texten till inget
     document.getElementById('toDoInput').value = '';
 
     //för att få fram listan när man lagt till något
-    document.getElementById('create-new-todo').style.display = 'block';
-    document.getElementById('footer').style.display = 'block';
+    document.getElementById('create-new-todo').style.display = 'inline-block';
+    document.getElementById('footer').style.display = 'inline-block';
 
     button.onclick = event => {   
         toDoContainter.removeChild(div);
@@ -144,7 +145,7 @@ clearCompleted.onclick = event => {
     while (done.length > 0){
         done[length].remove();
     }
-    
+
     if (itemsleft.length === 0) {
         clearCompleted.style.display = "none";
         footer.style.display = "none";

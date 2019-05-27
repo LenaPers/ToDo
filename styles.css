@@ -16,7 +16,6 @@ h1 {
 form {
     align-items: center;
     display: flex;
-    align-content: space-around;
 }
 
 #toDoInput:not(:focus) {
@@ -55,8 +54,9 @@ form {
     background-color: white;
     display: none;
     font-family: Arial, sans-serif;
+    font-size: 20px;
     width: 440px;
-    min-height: 20px;
+    min-height: 30px;
     border: 0px solid grey;
 }
 
@@ -66,8 +66,8 @@ form {
     align-content: space-around;
     background-color: white;
     width: 415px;
-    /* display: flex; */
-    /* display: none; */
+    display: flex;
+    display: none;
     box-shadow:
         0 1px 1px rgba(0, 0, 0, 0.15),
         0 10px 0 -5px #eee,
@@ -76,7 +76,6 @@ form {
         0 20px 1px -9px rgba(0, 0, 0, 0.15);
     padding: 10px 10px 10px 15px;
 }
-
 
 #labelCounter {
     min-width: 400px;
@@ -119,37 +118,38 @@ button {
     -webkit-appearance: none;
     outline: none;
     cursor: pointer;
-
 }
 
 .checkbox:checked {
-    background-color: blue;
+    background-color: lightgreen;
 }
-
-
 
 img {
     width: 20px;
     height: 18px;
-    opacity: 0.5;
-
+    opacity: 0.5;  
 }
-
 
 /* :hover för att göra ngt när man hoovrar, vilket element? */
 form div {
-
-
-
+    display: flex;
+    /* align-content: space-around;
+     */
     margin: 0px;
     border: 0.1px solid lightgrey;
     font-family: Arial, sans-serif;
-
-
+    height: 60px;
 }
 
+.cross{
+    margin-left: auto;
+}
 
 @media(max-width: 375px) {
+
+    h1{
+        font-size: 70px;
+    }
 
     #input,
     #main,
@@ -158,7 +158,6 @@ form div {
         width: 250px;
         font-size: 15px;
     }
-
 
     #toDoInput,
     #labelcount {
