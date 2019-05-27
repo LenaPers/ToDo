@@ -189,7 +189,15 @@ clearCompleted.onclick = event => {
     } 
     else {
         clearCompleted.style.display = "inline-block";
-    }    
+    }   
+    
+    if (completedToDo.length <= 0){
+    
+        clearCompleted.style.display = "none";
+    }
+    else{
+        clearCompleted.style.display = "inline-block";
+    } 
 }
 
 markAll.onclick = event => {
