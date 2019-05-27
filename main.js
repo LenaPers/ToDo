@@ -56,7 +56,7 @@ form.onsubmit = event => {
     document.getElementById('toDoInput').value = '';  
     counter.textContent = itemsleft.length + " items left";
 
-    butimgCrosston.onclick = event => {   
+    imgCross.onclick = event => {   
         toDoContainter.removeChild(div);
         counter.textContent = itemsleft.length + " items left";
 
@@ -101,7 +101,9 @@ let completedToDo = document.getElementsByClassName("completed");
 
 let allButton = document.getElementById("all")
 allButton.onclick = event => {
-   
+   allButton.style.border = "0.2px solid #BFBFBF";
+   activeButton.style.border = "none";
+   completedButton.style.border = "none";
 
     var i;
     for (i = 0; i < activeToDo.length; i++) {
@@ -116,6 +118,9 @@ allButton.onclick = event => {
 
 let activeButton = document.getElementById("active")
 activeButton.onclick = event => {
+    activeButton.style.border = "0.2px solid #BFBFBF";
+    allButton.style.border = "none";
+    completedButton.style.border = "none";
     var i;
     for (i = 0; i < completedToDo.length; i++) {
         completedToDo[i].style.display = "none";
@@ -129,6 +134,10 @@ activeButton.onclick = event => {
 
 let completedButton = document.getElementById("completed1")
 completedButton.onclick = event => {
+    completedButton.style.border = "0.2px solid #BFBFBF";
+    allButton.style.border = "none";
+    activeButton.style.border = "none";
+    
     var i;
     for (i = 0; i < activeToDo.length; i++) {
         activeToDo[i].style.display = "none";

@@ -88,8 +88,11 @@ form {
 
 button {
     background-color: white;
-    border: 0.2px solid #BFBFBF;
+
+    border: none;
+    
     color: grey;
+
 }
 
 #markAll {
