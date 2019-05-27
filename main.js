@@ -9,6 +9,9 @@ let all= document.getElementById('all')
 let markAll = document.getElementById('markAll');
 footer.insertBefore(counter, all);
 
+let activeToDo = document.getElementsByClassName("active");
+let completedToDo = document.getElementsByClassName("completed");
+
 form.onsubmit = event => {
     event.preventDefault();
     //sparar ner både input och listan att placera input i
@@ -75,6 +78,14 @@ form.onsubmit = event => {
             checkedElement.classList.remove("active");
 
             counter.textContent = itemsleft.length + " items left";
+
+            if (completedToDo.length <= 0){
+    
+                clearCompleted.style.display = "none";
+            }
+            else{
+                clearCompleted.style.display = "inline-block";
+            }            
         }
 
         if (!e.target.checked) {
@@ -84,6 +95,14 @@ form.onsubmit = event => {
             checkedElement.classList.remove("completed");
 
            counter.textContent = itemsleft.length + " items left";
+           
+           if (completedToDo.length <= 0){
+    
+            clearCompleted.style.display = "none";
+            }
+            else{
+            clearCompleted.style.display = "inline-block";
+            }
         }
 
     });
@@ -94,10 +113,16 @@ form.onsubmit = event => {
     else {
         clearCompleted.style.display = "inline-block";
     }
+
+    if (completedToDo.length <= 0){
+    
+        clearCompleted.style.display = "none";
+    }
+    else{
+        clearCompleted.style.display = "inline-block";
+    }
 }
 
-let activeToDo = document.getElementsByClassName("active");
-let completedToDo = document.getElementsByClassName("completed");
 
 let allButton = document.getElementById("all")
 allButton.onclick = event => {
@@ -149,6 +174,7 @@ completedButton.onclick = event => {
     }
 }
 
+
 let clearCompleted = document.getElementById("clearCompleted")
 clearCompleted.onclick = event => {
 
@@ -190,4 +216,13 @@ markAll.onclick = event => {
         }
         counter.textContent = itemsleft.length + " items left";        
     }  
+
+    if (completedToDo.length <= 0){
+    
+        clearCompleted.style.display = "none";
+    }
+    else{
+        clearCompleted.style.display = "inline-block";
+    }   
+    
 }
