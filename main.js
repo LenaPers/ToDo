@@ -56,6 +56,7 @@ form.onsubmit = event => {
 
     //sätter texten i input till inget
     document.getElementById('toDoInput').value = '';  
+    counter.textContent = itemsleft.length + " items left";
 
     button.onclick = event => {   
         toDoContainter.removeChild(div);
@@ -67,8 +68,6 @@ form.onsubmit = event => {
             document.getElementById('create-new-todo').style.display = 'none';
         }
     }
-
-    counter.textContent = itemsleft.length + " items left";
 
     checkbox.addEventListener('change', e => {
 
@@ -98,11 +97,12 @@ form.onsubmit = event => {
         clearCompleted.style.display = "inline-block";
     }
 }
+let activeToDo = document.getElementsByClassName("active");
+let completedToDo = document.getElementsByClassName("completed");
 
 let allButton = document.getElementById("all")
 allButton.onclick = event => {
-    let activeToDo = document.getElementsByClassName("active");
-    let completedToDo = document.getElementsByClassName("completed");
+   
 
     var i;
     for (i = 0; i < activeToDo.length; i++) {
@@ -117,9 +117,6 @@ allButton.onclick = event => {
 
 let activeButton = document.getElementById("active")
 activeButton.onclick = event => {
-    let completedToDo = document.getElementsByClassName("completed")
-    let activeToDo = document.getElementsByClassName("active")
-
     var i;
     for (i = 0; i < completedToDo.length; i++) {
         completedToDo[i].style.display = "none";
@@ -133,9 +130,6 @@ activeButton.onclick = event => {
 
 let completedButton = document.getElementById("completed1")
 completedButton.onclick = event => {
-    let activeToDo = document.getElementsByClassName("active")
-    let completedToDo = document.getElementsByClassName("completed");
-
     var i;
     for (i = 0; i < activeToDo.length; i++) {
         activeToDo[i].style.display = "none";
@@ -148,12 +142,10 @@ completedButton.onclick = event => {
 }
 
 let clearCompleted = document.getElementById("clearCompleted")
-
 clearCompleted.onclick = event => {
-    let done = document.getElementsByClassName("completed");
 
-    while (done.length > 0){
-        done[length].remove();
+    while (completedToDo.length > 0){
+        completedToDo[length].remove();
     }
 
     if (itemsleft.length === 0) {
