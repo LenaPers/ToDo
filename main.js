@@ -21,7 +21,7 @@ form.onsubmit = event => {
 
     let newToDo = document.createElement("label");
 
-    //lägger till checkbox rutan och sparar info om att den finns
+    //lägger till checkbox rutan
     let checkbox = document.createElement("input");
     
     let span = document.createElement("span");
@@ -29,16 +29,18 @@ form.onsubmit = event => {
     let button = document.createElement("img");
     if (span.textContent !="")
     {
+        //målar upp diven
         div.setAttribute("class", "active");
         toDoContainter.appendChild(div);
-
+        //målar upp checkboxen
         checkbox.setAttribute("type", "checkbox");
         checkbox.setAttribute("class", "checkbox");
         newToDo.appendChild(checkbox);
-
+        //lägger till labeln i diven
         div.appendChild(newToDo);
-
+        //lägger till texten man skrev i input
         newToDo.appendChild(span);
+        //lägger till kryssbildern till diven
         button.setAttribute("src", "xclose.png");
         button.setAttribute("class", "cross");
         div.appendChild(button);
