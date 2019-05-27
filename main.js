@@ -17,35 +17,46 @@ form.onsubmit = event => {
     let toDoInput = document.getElementById("toDoInput");
 
     //Skapar dive hela todoraden ligger i
-    let div = document.createElement("div");
-    div.setAttribute("class", "active");
-    toDoContainter.appendChild(div);
+    let div = document.createElement("div"); 
 
-    //lägger till texten man skrev in som text till textrutan
     let newToDo = document.createElement("label");
-    div.appendChild(newToDo);
 
     //lägger till checkbox rutan och sparar info om att den finns
     let checkbox = document.createElement("input");
-    checkbox.setAttribute("type", "checkbox");
-    checkbox.setAttribute("class", "checkbox");
-    newToDo.appendChild(checkbox);
-
+    
     let span = document.createElement("span");
     span.textContent = toDoInput.value;
-    newToDo.appendChild(span);
-
     let button = document.createElement("img");
-    button.setAttribute("src", "xclose.png");
-    button.setAttribute("class", "cross");
-    div.appendChild(button);
+    if (span.textContent !="")
+    {
+        div.setAttribute("class", "active");
+        toDoContainter.appendChild(div);
+
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("class", "checkbox");
+        newToDo.appendChild(checkbox);
+
+        div.appendChild(newToDo);
+
+        newToDo.appendChild(span);
+        button.setAttribute("src", "xclose.png");
+        button.setAttribute("class", "cross");
+        div.appendChild(button);
+
+          //för att få fram listan när man lagt till något
+        document.getElementById('create-new-todo').style.display = 'inline-block';
+        document.getElementById('footer').style.display = 'inline-block';
+
+    }
+    else{
+
+    }
+
 
     //gör att texten i rutan försvinner dvs sätter texten till inget
     document.getElementById('toDoInput').value = '';
 
-    //för att få fram listan när man lagt till något
-    document.getElementById('create-new-todo').style.display = 'inline-block';
-    document.getElementById('footer').style.display = 'inline-block';
+  
 
     button.onclick = event => {   
         toDoContainter.removeChild(div);
