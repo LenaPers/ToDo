@@ -54,11 +54,8 @@ form.onsubmit = event => {
         //gör inget
     }
 
-
-    //gör att texten i rutan försvinner dvs sätter texten till inget
-    document.getElementById('toDoInput').value = '';
-
-  
+    //sätter texten i input till inget
+    document.getElementById('toDoInput').value = '';  
 
     button.onclick = event => {   
         toDoContainter.removeChild(div);
@@ -172,7 +169,7 @@ clearCompleted.onclick = event => {
 markAll.onclick = event => {
     let toDoContainterArray = Array.from(document.getElementById('create-new-todo'));
     
-    //om någon är checkad ändra alla till completed 
+    //om någon är checkad ändra alla till active 
     if(toDoContainterArray.some(x=> x.checked)){
         var i;
         for (i = 0; i < toDoContainter.length; i++) {   
@@ -183,7 +180,7 @@ markAll.onclick = event => {
         counter.textContent = itemsleft.length + " items left";
     }
 
-    // //om någon är uncheckad ändra alla till active
+    // //om någon är uncheckad ändra alla till completed
     else{   
         var i;
         for (i = 0; i < toDoContainter.length; i++) {
