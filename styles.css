@@ -133,8 +133,7 @@ img {
 /* :hover för att göra ngt när man hoovrar, vilket element? */
 form div {
     display: flex;
-    /* align-content: space-around;
-     */
+  
     margin: 0px;
     border: 0.1px solid lightgrey;
     font-family: Arial, sans-serif;
@@ -143,12 +142,23 @@ form div {
 
 .cross{
     margin-left: auto;
+    align-content: center;
+}
+
+#clearCompleted {
+
+    margin-top: 20px;
+    margin-left: 60px;
 }
 
 @media(max-width: 375px) {
 
     h1{
         font-size: 70px;
+    }
+
+    #toDoInput:not(:focus) {
+        font-size: 15px;
     }
 
     #input,
@@ -162,6 +172,7 @@ form div {
     #toDoInput,
     #labelcount {
         min-width: 200px;
+        font-size: 15px;
     }
 
     input {
@@ -172,19 +183,19 @@ form div {
         width: 225px;
     }
 
-    #all {
+     #all {
 
-        margin-left: 0px;
+        margin-left: 10px;
         margin-right: 5px;
     }
 
     #active {
-        margin-left: 20px;
-        margin-right: 20px
-    }
-
+        margin-left: 10px;
+        margin-right: 10px
+    } 
     #clearCompleted {
 
         margin-top: 20px;
+        margin-left: 10px;
     }
 }
