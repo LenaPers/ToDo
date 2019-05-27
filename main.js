@@ -47,8 +47,10 @@ form.onsubmit = event => {
         div.appendChild(imgCross);
 
           //för att få fram listan när man lagt till något
-        document.getElementById('create-new-todo').style.display = 'inline-block';
-        document.getElementById('footer').style.display = 'inline-block';
+        toDoContainter.style.display = 'inline-block';
+        footer.style.display = 'inline-block';
+        markAll.style.display = 'inline-block';
+
 
     }
     else{
@@ -64,8 +66,8 @@ form.onsubmit = event => {
         counter.textContent = itemsleft.length + " items left";
 
         if (toDoContainter.length === 0) {
-            document.getElementById('footer').style.display = 'none';
-            document.getElementById('create-new-todo').style.display = 'none';
+            footer.style.display = 'none';
+            toDoContainter.style.display = 'none';
         }
     }
 
@@ -174,7 +176,6 @@ completedButton.onclick = event => {
     }
 }
 
-
 let clearCompleted = document.getElementById("clearCompleted")
 clearCompleted.onclick = event => {
 
@@ -191,8 +192,7 @@ clearCompleted.onclick = event => {
         clearCompleted.style.display = "inline-block";
     }   
     
-    if (completedToDo.length <= 0){
-    
+    if (completedToDo.length <= 0){    
         clearCompleted.style.display = "none";
     }
     else{

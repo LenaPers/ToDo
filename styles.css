@@ -98,6 +98,7 @@ button {
 #markAll {
     width: 30px;
     height: 30px;
+    display: none;
 }
 
 #create-new-todo button {
@@ -173,7 +174,6 @@ span{
     #input,
     #main,
     #create-new-todo {
-
         width: 250px;
         font-size: 15px;
     }
