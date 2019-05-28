@@ -13,8 +13,6 @@ h1 {
     margin: 10px;
 }
 
-
-
 #toDoInput:not(:focus) {
     font-size: 20px;
     font-style: italic;
@@ -49,13 +47,7 @@ form {
     border: 0.1px solid lightgrey;
 }
 
-.toDoLabel {
-    /* align-items: center; */
-    /* display: flex; */
-}
-
-#create-new-todo {
-    
+#create-new-todo {    
     background-color: white;
     display: none;
     font-family: Arial, sans-serif;
@@ -106,8 +98,7 @@ button {
 .completed {
     color: grey;
     opacity: 0.5;
-    text-decoration: line-through;
-    
+    text-decoration: line-through;    
 }
 
 .checkbox {
@@ -131,7 +122,6 @@ img {
     width: 20px;
     height: 18px;
     opacity: 0.5;
-
 }
 
 /* :hover för att göra ngt när man hoovrar, vilket element? */
@@ -141,7 +131,6 @@ form div {
     align-items: center;
     margin: 0px;
     border: 0.1px solid lightgrey;
-    /* font-family: Arial, sans-serif; */
     min-height: 60px;
 }
 
