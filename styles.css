@@ -13,8 +13,6 @@ h1 {
     margin: 10px;
 }
 
-
-
 #toDoInput:not(:focus) {
     font-size: 20px;
     font-style: italic;
@@ -57,7 +55,6 @@ form {
 }
 
 #create-new-todo {
-
     background-color: white;
     display: none;
     font-family: Arial, sans-serif;
