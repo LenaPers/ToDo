@@ -28,8 +28,7 @@ form.onsubmit = event => {
     let span = document.createElement("span");
     span.textContent = toDoInput.value;
     let imgCross = document.createElement("img");
-    if (span.textContent !="")
-    {
+    if (span.textContent !=""){        
         //målar upp diven
         div.setAttribute("class", "active");
         toDoContainter.appendChild(div);
@@ -50,8 +49,6 @@ form.onsubmit = event => {
         toDoContainter.style.display = 'inline-block';
         footer.style.display = 'inline-block';
         markAll.style.display = 'inline-block';
-
-
     }
     else{
         //gör inget
@@ -81,8 +78,7 @@ form.onsubmit = event => {
 
             counter.textContent = itemsleft.length + " items left";
 
-            if (completedToDo.length <= 0){
-    
+            if (completedToDo.length <= 0){    
                 clearCompleted.style.display = "none";
             }
             else{
@@ -96,10 +92,9 @@ form.onsubmit = event => {
             checkedElement.classList.add("active");
             checkedElement.classList.remove("completed");
 
-           counter.textContent = itemsleft.length + " items left";
+            counter.textContent = itemsleft.length + " items left";
            
-           if (completedToDo.length <= 0){
-    
+            if (completedToDo.length <= 0){    
             clearCompleted.style.display = "none";
             }
             else{
@@ -109,7 +104,7 @@ form.onsubmit = event => {
 
     });
 
-    if (itemsleft === 0) {
+    if (itemsleft === 0){
         clearCompleted.style.display = "none";
     } 
     else {
@@ -155,7 +150,7 @@ activeButton.onclick = event => {
 
     var x;
     for (x = 0; x < activeToDo.length; x++) {
-        activeToDo[x].style.display = "block";
+        activeToDo[x].style.display = "inline-block";
     }
 }
 
@@ -172,7 +167,7 @@ completedButton.onclick = event => {
 
     var x;
     for (x = 0; x < completedToDo.length; x++) {
-        completedToDo[x].style.display = "block";
+        completedToDo[x].style.display = "inline-block";
     }
 }
 
