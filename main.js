@@ -21,6 +21,7 @@ form.onsubmit = event => {
     let div = document.createElement("div"); 
 
     let newToDo = document.createElement("label");
+    newToDo.setAttribute("class","toDoLabel")
 
     //lägger till checkbox rutan
     let checkbox = document.createElement("input");
@@ -42,7 +43,6 @@ form.onsubmit = event => {
         newToDo.appendChild(span);
         //lägger till kryssbildern till diven
         imgCross.setAttribute("src", "xclose.png");
-        imgCross.setAttribute("class", "cross");
         newToDo.appendChild(imgCross);
 
           //för att få fram listan när man lagt till något
@@ -129,12 +129,12 @@ allButton.onclick = event => {
 
     var i;
     for (i = 0; i < activeToDo.length; i++) {
-        activeToDo[i].style.display = "block";
+        activeToDo[i].style.display = "flex";
     }
 
     var x;
     for (x = 0; x < completedToDo.length; x++) {
-        completedToDo[x].style.display = "block";
+        completedToDo[x].style.display = "flex";
     }
 }
 
@@ -150,7 +150,7 @@ activeButton.onclick = event => {
 
     var x;
     for (x = 0; x < activeToDo.length; x++) {
-        activeToDo[x].style.display = "inline-block";
+        activeToDo[x].style.display = "flex";
     }
 }
 
@@ -167,7 +167,7 @@ completedButton.onclick = event => {
 
     var x;
     for (x = 0; x < completedToDo.length; x++) {
-        completedToDo[x].style.display = "inline-block";
+        completedToDo[x].style.display = "flex";
     }
 }
 
