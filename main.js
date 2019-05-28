@@ -43,7 +43,7 @@ form.onsubmit = event => {
         newToDo.appendChild(span);
         //lägger till kryssbildern till diven
         imgCross.setAttribute("src", "xclose.png");
-        newToDo.appendChild(imgCross);
+        div.appendChild(imgCross);
 
           //för att få fram listan när man lagt till något
         toDoContainter.style.display = 'inline-block';
