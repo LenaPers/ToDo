@@ -50,20 +50,28 @@ form {
 }
 
 .toDoLabel {
-    /* align-items: center; */
-    /* display: flex; */
+    align-items: center;
+    display: flex;
+    
 }
 
 #create-new-todo {
-    
-    background-color: white;
-    display: none;
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-    width: 440px;
-    border: 0px solid grey;
-    justify-content: space-around;
-    box-shadow: 10px 10px 25px 5px lightgrey;
+
+background-color: white;
+
+display: none;
+
+font-family: Arial, sans-serif;
+
+font-size: 20px;
+
+width: 440px;
+
+border: 0px solid grey;
+
+justify-content: space-around;
+
+box-shadow: 10px 10px 25px 5px lightgrey;
 }
 
 #footer {
@@ -107,7 +115,7 @@ button {
     color: grey;
     opacity: 0.5;
     text-decoration: line-through;
-    
+
 }
 
 .checkbox {
@@ -129,9 +137,8 @@ button {
 
 img {
     width: 20px;
-    height: 18px;
     opacity: 0.5;
-
+    margin-left: auto;
 }
 
 /* :hover för att göra ngt när man hoovrar, vilket element? */
