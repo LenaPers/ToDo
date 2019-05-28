@@ -64,6 +64,11 @@ form {
     box-shadow: 10px 10px 25px 5px lightgrey;
 }
 
+form div:hover img {
+    display: flex;
+   
+}
+
 #footer {
     align-items: center;
     align-content: space-around;
@@ -129,7 +134,7 @@ img {
     width: 20px;
     opacity: 0.5;
     margin-left: auto;
-    display: flex;
+    display: none;
 }
 
 /* :hover för att göra ngt när man hoovrar, vilket element? */
