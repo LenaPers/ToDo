@@ -44,7 +44,17 @@ form {
     display: flex;
     background-color: white;
     border: 0.1px solid lightgrey;
+<<<<<<< HEAD
     width: 440px;
+=======
+    width: 440px
+}
+
+.toDoLabel {
+    align-items: center;
+    display: flex;
+
+>>>>>>> c2218853cfc3c5d8e1881859b8f66ecc2dcd06b0
 }
 
 #create-new-todo {
@@ -52,8 +62,12 @@ form {
     display: none;
     font-family: Arial, sans-serif;
     font-size: 20px;
+<<<<<<< HEAD
     
     border: 0px solid grey; 
+=======
+    border: 0px solid grey;
+>>>>>>> c2218853cfc3c5d8e1881859b8f66ecc2dcd06b0
     justify-content: space-around;
     box-shadow: 10px 10px 25px 5px lightgrey;
 }
@@ -129,8 +143,12 @@ img {
     width: 20px;
     opacity: 0.5;
     margin-left: auto;
+<<<<<<< HEAD
     margin-right: 5px;
     display: none;
+=======
+    display: flex;
+>>>>>>> c2218853cfc3c5d8e1881859b8f66ecc2dcd06b0
 }
 
 /* :hover för att göra ngt när man hoovrar, vilket element? */
@@ -140,6 +158,7 @@ form div {
     align-items: center;
     margin: 0px;
     border: 0.1px solid lightgrey;
+    font-family: Arial, sans-serif;
     min-height: 60px;
 }
 
