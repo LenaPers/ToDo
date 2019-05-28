@@ -44,7 +44,7 @@ form {
     display: flex;
     background-color: white;
     border: 0.1px solid lightgrey;
-    width: 440px
+    width: 440px;
 }
 
 .toDoLabel {
@@ -150,7 +150,13 @@ form div {
 
 span {
     margin-left: 10px;
+<<<<<<< HEAD
     /* display: inline-block; */
+=======
+    display: inline-block;
+    width: 375px;
+    word-wrap: break-word;
+>>>>>>> bb60ed5715297612d8c6fd3a285ee27565c52e6a
 }
 
 
