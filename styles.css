@@ -65,7 +65,7 @@ form {
   
 form div:hover img {
     display: flex;
-  }
+}
 
 
 #footer {
@@ -132,10 +132,9 @@ img {
     width: 20px;
     opacity: 0.5;
     margin-left: auto;
-    display: flex;
+    display: none;
 }
 
-/* :hover för att göra ngt när man hoovrar, vilket element? */
 form div {
     display: flex;
     flex-direction: row;
