@@ -49,7 +49,7 @@ form {
 
 .toDoLabel {
     align-items: center;
-    display: flex;
+    /* display: flex; */
 } 
 
 #create-new-todo {
@@ -61,12 +61,10 @@ form {
     justify-content: space-around;
     box-shadow: 10px 10px 25px 5px lightgrey;
 }
-
   
 form div:hover img {
     display: flex;
 }
-
 
 #footer {
     align-items: center;
@@ -152,7 +150,7 @@ form div {
 
 span {
     margin-left: 10px;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 
@@ -166,10 +164,9 @@ span {
         font-size: 15px;
     }
 
-    #input,
     #create-new-todo,
     form {
-        width: 250px;
+        max-width: 250px;
         font-size: 15px;
     }
 
