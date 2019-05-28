@@ -12,50 +12,47 @@ footer.insertBefore(counter, all);
 let activeToDo = document.getElementsByClassName("active");
 let completedToDo = document.getElementsByClassName("completed");
 
+let memory = window.localStorage;
+
 form.onsubmit = event => {
     event.preventDefault();
-    //sparar ner både input och listan att placera input i
+
     let toDoInput = document.getElementById("toDoInput");
 
-    //Skapar dive hela todoraden ligger i
     let div = document.createElement("div");
 
     let newToDo = document.createElement("label");
     newToDo.setAttribute("class","toDoLabel")
 
-    //lägger till checkbox rutan
     let checkbox = document.createElement("input");
 
     let span = document.createElement("span");
     span.textContent = toDoInput.value;
     let imgCross = document.createElement("img");
+
+
     if (span.textContent !=""){
-        //målar upp diven
+
+        memory.setItem('toDo',toDoInput.value)
+
         div.setAttribute("class", "active");
         toDoContainter.appendChild(div);
-        //målar upp checkboxen
         checkbox.setAttribute("type", "checkbox");
         checkbox.setAttribute("class", "checkbox");
         newToDo.appendChild(checkbox);
-        //lägger till labeln i diven
         div.appendChild(newToDo);
-        //lägger till texten man skrev i input
-        newToDo.appendChild(span);
-        //lägger till kryssbildern till diven
+        newToDo.appendChild(span);      
         imgCross.setAttribute("src", "xclose.png");
-        // imgCross.setAttribute('style', 'display: none');
         div.appendChild(imgCross);
 
-          //för att få fram listan när man lagt till något
         toDoContainter.style.display = 'inline-block';
         footer.style.display = 'inline-block';
         markAll.style.display = 'inline-block';
     }
     else{
-        //gör inget
+
     }
 
-    //sätter texten i input till inget
     document.getElementById('toDoInput').value = '';
     counter.textContent = itemsleft.length + " items left";
 
@@ -127,6 +124,7 @@ allButton.onclick = event => {
    allButton.style.border = "0.2px solid #BFBFBF";
    activeButton.style.border = "none";
    completedButton.style.border = "none";
+   location.hash = "all";
 
     var i;
     for (i = 0; i < activeToDo.length; i++) {
@@ -144,6 +142,8 @@ activeButton.onclick = event => {
     activeButton.style.border = "0.2px solid #BFBFBF";
     allButton.style.border = "none";
     completedButton.style.border = "none";
+    location.hash = "active";
+
     var i;
     for (i = 0; i < completedToDo.length; i++) {
         completedToDo[i].style.display = "none";
@@ -160,6 +160,7 @@ completedButton.onclick = event => {
     completedButton.style.border = "0.2px solid #BFBFBF";
     allButton.style.border = "none";
     activeButton.style.border = "none";
+    location.hash = "completed";
 
     var i;
     for (i = 0; i < activeToDo.length; i++) {
@@ -231,3 +232,6 @@ markAll.onclick = event => {
 
 
 }
+
+
+
