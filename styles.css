@@ -168,13 +168,14 @@ span {
     }
 
     #input,
-    #create-new-todo {
+    #create-new-todo,
+    form {
         width: 250px;
         font-size: 15px;
     }
 
     #toDoInput,
-    #labelcount {
+    #labelcount{
         min-width: 200px;
         font-size: 15px;
         padding: 0 16px;
