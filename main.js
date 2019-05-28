@@ -13,6 +13,14 @@ let activeToDo = document.getElementsByClassName("active");
 let completedToDo = document.getElementsByClassName("completed");
 
 let memory = window.localStorage;
+// if (memory.length >0){
+
+//     // for (let index = 0; index < memory.length; index++) {
+        
+//     //     var cat = memory.getItem('todo', 'myCat');
+        
+//     // }
+// }
 
 form.onsubmit = event => {
     event.preventDefault();

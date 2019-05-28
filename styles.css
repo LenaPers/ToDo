@@ -137,7 +137,6 @@ img {
     display: none;
 }
 
-/* :hover för att göra ngt när man hoovrar, vilket element? */
 form div {
     display: flex;
     flex-direction: row;
@@ -158,6 +157,10 @@ span {
     display: inline-block;
     max-width: 375px;
     word-wrap: break-word;
+}
+
+form div:hover img{
+    display: flex;
 }
 
 
@@ -187,6 +190,7 @@ span {
 
     #footer {
         width: 225px;
+
     }
 
     #all {
