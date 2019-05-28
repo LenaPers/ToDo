@@ -150,15 +150,10 @@ form div {
 
 span {
     margin-left: 10px;
-<<<<<<< HEAD
-    /* display: inline-block; */
-=======
     display: inline-block;
     width: 375px;
     word-wrap: break-word;
->>>>>>> bb60ed5715297612d8c6fd3a285ee27565c52e6a
 }
-
 
 @media(max-width: 375px) {
 
@@ -203,5 +198,12 @@ span {
 
         margin-top: 20px;
         margin-left: 10px;
+    }
+
+    span {
+        margin-left: 10px;
+        display: inline-block;
+        width: 225px;
+        word-wrap: break-word;
     }
 }
