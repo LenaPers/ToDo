@@ -20,7 +20,6 @@ h1 {
 }
 
 #toDoInput {
-
     border: 0px solid grey;
     /* Outline hides blue border on input */
     outline-width: 0;
@@ -45,12 +44,7 @@ form {
     display: flex;
     background-color: white;
     border: 0.1px solid lightgrey;
-}
-
-.toDoLabel {
-    align-items: center;
-    display: flex;
-    
+    width: 440px;
 }
 
 #create-new-todo {
@@ -58,11 +52,17 @@ form {
     display: none;
     font-family: Arial, sans-serif;
     font-size: 20px;
-    width: 440px;
+    
     border: 0px solid grey; 
     justify-content: space-around;
     box-shadow: 10px 10px 25px 5px lightgrey;
 }
+
+  
+form div:hover img {
+    display: flex;
+  }
+
 
 #footer {
     align-items: center;
@@ -130,6 +130,7 @@ img {
     opacity: 0.5;
     margin-left: auto;
     margin-right: 5px;
+    display: none;
 }
 
 /* :hover för att göra ngt när man hoovrar, vilket element? */
