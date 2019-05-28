@@ -139,6 +139,7 @@ img {
     width: 20px;
     opacity: 0.5;
     margin-left: auto;
+    margin-right: 5px;
 }
 
 /* :hover för att göra ngt när man hoovrar, vilket element? */
