@@ -13,35 +13,64 @@ let activeToDo = document.getElementsByClassName("active");
 let completedToDo = document.getElementsByClassName("completed");
 
 let memory = window.localStorage;
-// if (memory.length >0){
-
-//     // for (let index = 0; index < memory.length; index++) {
-        
-//     //     var cat = memory.getItem('todo', 'myCat');
-        
-//     // }
-// }
+let memoryItems =[];
 
 form.onsubmit = event => {
     event.preventDefault();
 
+    // hämtar allt i minnet o gör det till en array
+    let hej= memory.getItem('toDo').split(',');
+    // om det finns mer än 0 grejer i minnet
+    if(hej.length > 0){
+        hej.forEach(function(item, index, array) {
+            //printa ut varje grej i en div är tanken här
+            //alert(item, index);
+
+            let toDoInput = document.getElementById("toDoInput");
+            let div = document.createElement("div");
+            let newToDo = document.createElement("label");
+            newToDo.setAttribute("class","toDoLabel");
+            let checkbox = document.createElement("input");
+            let span = document.createElement("span");
+            span.textContent = item;
+            let imgCross = document.createElement("img");
+
+            div.setAttribute("class", "active");
+            toDoContainter.appendChild(div);
+            checkbox.setAttribute("type", "checkbox");
+            checkbox.setAttribute("class", "checkbox");
+            newToDo.appendChild(checkbox);
+            div.appendChild(newToDo);
+            newToDo.appendChild(span);      
+            imgCross.setAttribute("src", "xclose.png");
+            div.appendChild(imgCross);
+    
+            toDoContainter.style.display = 'inline-block';
+            footer.style.display = 'inline-block';
+            markAll.style.display = 'inline-block';
+
+            //nu målar den upp alla stringar om och om igen (eftersom att de redan finns i listan i minnet) 
+            // ändra så att den bara målar upp om man inte skrivit in ngt annat/ nyligen går in på sidan
+
+        });
+    }
+
     let toDoInput = document.getElementById("toDoInput");
-
     let div = document.createElement("div");
-
     let newToDo = document.createElement("label");
-    newToDo.setAttribute("class","toDoLabel")
-
+    newToDo.setAttribute("class","toDoLabel");
     let checkbox = document.createElement("input");
-
     let span = document.createElement("span");
     span.textContent = toDoInput.value;
     let imgCross = document.createElement("img");
 
-
     if (span.textContent !=""){
-
-        memory.setItem('toDo',toDoInput.value)
+        //lägger till input i en array
+        memoryItems.push(toDoInput.value);
+        // her de i en sträng då localStorage vill ha det så
+        let memoryString = memoryItems.toString();
+        // lägger strängen i minnet
+        memory.setItem('toDo',memoryString)
 
         div.setAttribute("class", "active");
         toDoContainter.appendChild(div);
