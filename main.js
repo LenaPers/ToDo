@@ -202,7 +202,6 @@ markAll.onclick = event => {
         counter.textContent = itemsleft.length + " items left";
     }
 
-    // //om någon är uncheckad ändra alla till completed
     else{
         var i;
         for (i = 0; i < toDoContainter.length; i++) {
@@ -220,7 +219,6 @@ markAll.onclick = event => {
     else{
         clearCompleted.style.display = "inline-block";
     }
-
 }
 
 

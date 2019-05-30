@@ -20,7 +20,6 @@ h1 {
 }
 
 #toDoInput {
-
     border: 0px solid grey;
     /* Outline hides blue border on input */
     outline-width: 0;
@@ -51,7 +50,6 @@ form {
 .toDoLabel {
     align-items: center;
     display: flex;
-
 }
 
 #create-new-todo {
@@ -109,7 +107,6 @@ button {
     color: grey;
     opacity: 0.5;
     text-decoration: line-through;
-
 }
 
 .checkbox {
@@ -165,6 +162,9 @@ form div:hover img{
 
 @media(max-width: 375px) {
 
+    form {
+        max-width: 250px;
+    }
     h1 {
         font-size: 70px;
     }
@@ -180,7 +180,7 @@ form div:hover img{
 
     #toDoInput,
     #labelcount {
-        width: 200px;
+        min-width: 25px;
         font-size: 15px;
         padding: 0 16px;
     }
@@ -190,7 +190,6 @@ form div:hover img{
     }
 
     #all {
-
         margin-left: 10px;
         margin-right: 5px;
     }
@@ -201,7 +200,6 @@ form div:hover img{
     }
 
     #clearCompleted {
-
         margin-top: 20px;
         margin-left: 10px;
     }
