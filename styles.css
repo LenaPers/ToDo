@@ -51,7 +51,6 @@ form {
 .toDoLabel {
     align-items: center;
     display: flex;
-
 }
 
 #create-new-todo {
@@ -173,19 +172,22 @@ form div:hover img{
         font-size: 15px;
     }
     
-    #create-new-todo {
-        width: 250px;
-        font-size: 15px;
+    .toDoLabel {
+        align-items: center;
+        display: flex;
+    
     }
 
     #toDoInput,
     #labelcount {
-        width: 200px;
+        min-width: 25px;
         font-size: 15px;
         padding: 0 16px;
-        width: 20px;
     }
 
+    form {
+        max-width: 250px;
+    }
     #footer {
         width: 225px;
 
