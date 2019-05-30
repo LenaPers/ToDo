@@ -172,7 +172,7 @@ form div:hover img{
     #toDoInput:not(:focus) {
         font-size: 15px;
     }
-    
+
     #create-new-todo {
         width: 250px;
         font-size: 15px;
@@ -183,12 +183,10 @@ form div:hover img{
         width: 200px;
         font-size: 15px;
         padding: 0 16px;
-        width: 20px;
     }
 
     #footer {
         width: 225px;
-
     }
 
     #all {
