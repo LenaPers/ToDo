@@ -172,8 +172,7 @@ form div:hover img{
     #toDoInput:not(:focus) {
         font-size: 15px;
     }
-
-    #input,
+    
     #create-new-todo {
         width: 250px;
         font-size: 15px;
@@ -181,7 +180,7 @@ form div:hover img{
 
     #toDoInput,
     #labelcount {
-        max-width: 200px;
+        width: 200px;
         font-size: 15px;
         padding: 0 16px;
         width: 20px;
