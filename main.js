@@ -15,17 +15,16 @@ let completedToDo = document.getElementsByClassName("completed");
 let memory = window.localStorage;
 let memoryItems =[];
 
-form.onsubmit = event => {
-    event.preventDefault();
+// hämtar allt i minnet o gör det till en array
+let fromMemoryArray= memory.getItem('toDo');
+// om det finns ngt att splita o dela upp en array på, gör det! 
+if (fromMemoryArray != null){
+    let hej =fromMemoryArray.split(',');
+    if (fromMemoryArray.length>0) {    
+        
+        hej.forEach(function(item){
 
-    // hämtar allt i minnet o gör det till en array
-    let hej= memory.getItem('toDo').split(',');
-    // om det finns mer än 0 grejer i minnet
-    if(hej.length > 0){
-        hej.forEach(function(item, index, array) {
-            //printa ut varje grej i en div är tanken här
-            //alert(item, index);
-
+            //printa ut varje grej i en div    
             let toDoInput = document.getElementById("toDoInput");
             let div = document.createElement("div");
             let newToDo = document.createElement("label");
@@ -44,15 +43,55 @@ form.onsubmit = event => {
             newToDo.appendChild(span);      
             imgCross.setAttribute("src", "xclose.png");
             div.appendChild(imgCross);
-    
+
             toDoContainter.style.display = 'inline-block';
             footer.style.display = 'inline-block';
-            markAll.style.display = 'inline-block';
+            markAll.style.display = 'inline-block';  
+            memoryItems.push(item);
 
-            //nu målar den upp alla stringar om och om igen (eftersom att de redan finns i listan i minnet) 
-            // ändra så att den bara målar upp om man inte skrivit in ngt annat/ nyligen går in på sidan
+            counter.textContent = itemsleft.length + " items left";
+        })
+    }
+}
 
-        });
+form.onsubmit = event => {
+    event.preventDefault();
+
+    // om det inte finns ngt i todon kolla om det finns ngt i minnet:
+    if (toDoContainter.length < 2){
+
+        if (fromMemoryArray != null){
+        if(fromMemoryArray.length > 0){
+        let hej =fromMemoryArray.split(',');
+
+            hej.forEach(function(item) {
+                //printa ut varje grej i en div    
+                let toDoInput = document.getElementById("toDoInput");
+                let div = document.createElement("div");
+                let newToDo = document.createElement("label");
+                newToDo.setAttribute("class","toDoLabel");
+                let checkbox = document.createElement("input");
+                let span = document.createElement("span");
+                span.textContent = item;
+                let imgCross = document.createElement("img");
+    
+                div.setAttribute("class", "active");
+                toDoContainter.appendChild(div);
+                checkbox.setAttribute("type", "checkbox");
+                checkbox.setAttribute("class", "checkbox");
+                newToDo.appendChild(checkbox);
+                div.appendChild(newToDo);
+                newToDo.appendChild(span);      
+                imgCross.setAttribute("src", "xclose.png");
+                div.appendChild(imgCross);
+        
+                toDoContainter.style.display = 'inline-block';
+                footer.style.display = 'inline-block';
+                markAll.style.display = 'inline-block';  
+                memoryItems.push(item);
+            });
+        }
+    }
     }
 
     let toDoInput = document.getElementById("toDoInput");
@@ -109,7 +148,7 @@ form.onsubmit = event => {
             let checkedElement = e.target.parentNode.parentNode;
 
             checkedElement.classList.add("completed");
-            checkedElement.classList.remove("active");
+            checkedElement.classList.remove("active");           
 
             counter.textContent = itemsleft.length + " items left";
 
@@ -212,6 +251,9 @@ completedButton.onclick = event => {
 
 let clearCompleted = document.getElementById("clearCompleted")
 clearCompleted.onclick = event => {
+    memory.clear();
+    fromMemoryArray =[];
+    memoryItems = [];
 
     while (completedToDo.length > 0){
         completedToDo[length].remove();
