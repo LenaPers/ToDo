@@ -29,7 +29,6 @@ h1 {
     min-height: 30px;
     min-width: 400px;
     padding: 16px 16px 16px 40px;
-
 }
 
 #info {
@@ -46,11 +45,13 @@ form {
     background-color: white;
     border: 0.1px solid lightgrey;
     width: 440px;
+    box-shadow: 10px 10px 25px 5px lightgrey;
 }
 
 .toDoLabel {
     align-items: center;
     display: flex;
+
 }
 
 #create-new-todo {
@@ -171,23 +172,19 @@ form div:hover img{
     #toDoInput:not(:focus) {
         font-size: 15px;
     }
-    
-    .toDoLabel {
-        align-items: center;
-        display: flex;
-    
+
+    #create-new-todo {
+        width: 250px;
+        font-size: 15px;
     }
 
     #toDoInput,
     #labelcount {
-        min-width: 25px;
+        width: 200px;
         font-size: 15px;
         padding: 0 16px;
     }
 
-    form {
-        max-width: 250px;
-    }
     #footer {
         width: 225px;
     }
