@@ -51,7 +51,7 @@ if (fromMemoryArray != null){
 
             counter.textContent = itemsleft.length + " items left";
         })
-    }
+    }   
 }
 
 form.onsubmit = event => {
@@ -136,6 +136,17 @@ form.onsubmit = event => {
         toDoContainter.removeChild(div);
         counter.textContent = itemsleft.length + " items left";
 
+         // HUR FÅ TILL ATT DEN TAR BORT FRÅN ARRAYEN HÄR? ska tas bort från:
+            //memoryItems
+            //hur kommer man åt texten i span???
+            let ho= e.target.childNodes;
+
+            // for( var i = 0; i < memoryItems.length; i++){ 
+            //     if ( memoryItems[i] === text) {
+            //         memoryItems.splice(i, 1); 
+            //     }
+            // }
+
         if (toDoContainter.length === 0) {
             footer.style.display = 'none';
             toDoContainter.style.display = 'none';
@@ -151,6 +162,7 @@ form.onsubmit = event => {
             checkedElement.classList.remove("active");           
 
             counter.textContent = itemsleft.length + " items left";
+
 
             if (completedToDo.length <= 0){
                 clearCompleted.style.display = "none";
