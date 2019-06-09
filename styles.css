@@ -152,7 +152,7 @@ span {
     margin-left: 10px;
     display: inline-block;
     max-width: 375px;
-    word-wrap: break-word;
+    word-break: break-all;
 }
 
 form div:hover img{
@@ -167,6 +167,9 @@ form div:hover img{
     }
     h1 {
         font-size: 70px;
+    }
+    span{
+        width: 75%;
     }
 
     #toDoInput:not(:focus) {
@@ -185,7 +188,7 @@ form div:hover img{
     }
 
     #footer {
-        width: 67%;
+        width: 65%;
     }
 
     #all {
