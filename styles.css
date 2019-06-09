@@ -163,7 +163,7 @@ form div:hover img{
 @media(max-width: 375px) {
 
     form {
-        max-width: 250px;
+        width: 75%;
     }
     h1 {
         font-size: 70px;
@@ -174,10 +174,9 @@ form div:hover img{
     }
 
     #create-new-todo {
-        width: 250px;
+        width: 75%;
         font-size: 15px;
     }
-
     #toDoInput,
     #labelcount {
         min-width: 25px;
@@ -186,7 +185,7 @@ form div:hover img{
     }
 
     #footer {
-        width: 225px;
+        width: 67%;
     }
 
     #all {
